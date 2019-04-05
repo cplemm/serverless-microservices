@@ -7,7 +7,7 @@ window.authEnabled = true;
 // API endpoints
 window.apiKey = '96e26b2432334d2e9f45c49731c1d8d2';
 window.apiBaseUrl = 'https://clemmrideshare.azure-api.net';
-window.apiDriversBaseUrl = '${window.apiBaseUrl}/d';
-window.apiTripsBaseUrl = '${window.apiBaseUrl}/t';
-window.apiPassengersBaseUrl = '${window.apiBaseUrl}/p';
+window.apiDriversBaseUrl = `${window.apiBaseUrl}/d`;
+window.apiTripsBaseUrl = `${window.apiBaseUrl}/t`;
+window.apiPassengersBaseUrl = `${window.apiBaseUrl}/p`;
 window.signalrInfoUrl = 'https://clemmrideshare.service.signalr.net/api/signalrinfo';
