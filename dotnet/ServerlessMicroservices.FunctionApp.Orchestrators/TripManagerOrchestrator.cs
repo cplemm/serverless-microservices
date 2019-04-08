@@ -62,6 +62,7 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
                 var acceptedDriver = trip.AvailableDrivers.SingleOrDefault(d => d.Code == driverAcceptCode);
                 log.LogInformation($"Driver Name: {acceptedDriver.LastName}");
                 log.LogInformation($"Driver Code: {acceptedDriver.Code}");
+
                 if (acceptedDriver == null)
                     throw new Exception($"Data integrity - received an ack from an invalid driver {driverAcceptCode}!!");
 
