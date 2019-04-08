@@ -139,10 +139,13 @@ namespace ServerlessMicroservices.FunctionApp.Trips
                 {
                     // Send over to the trip manager 
                     var baseUrl = settingService.GetStartTripManagerOrchestratorBaseUrl();
+                    log.LogInformation($"baseUrl: {baseUrl}");
                     var key = settingService.GetStartTripManagerOrchestratorApiKey();
+                    log.LogInformation($"key: {key}");
                     if (string.IsNullOrEmpty(baseUrl) || string.IsNullOrEmpty(key))
                         throw new Exception("Trip manager orchestrator base URL and key must be both provided");
 
+                    log.LogInformation($"{baseUrl}/tripmanagers/{code}/acknowledge/drivers/{drivercode}?code={key}");
                     await Utilities.Post<dynamic, dynamic>(null, null, $"{baseUrl}/tripmanagers/{code}/acknowledge/drivers/{drivercode}?code={key}", new Dictionary<string, string>());
                 }
                 else
