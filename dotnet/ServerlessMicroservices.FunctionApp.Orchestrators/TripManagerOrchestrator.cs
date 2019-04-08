@@ -58,7 +58,10 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
                 if (driverAcceptCode == "Timed Out")
                     throw new Exception($"Did not receive an ack from any driver in {ServiceFactory.GetSettingService().GetDriversAcknowledgeMaxWaitPeriodInSeconds()} seconds!!");
 
+                log.LogInformation($"Getting driver...");
                 var acceptedDriver = trip.AvailableDrivers.SingleOrDefault(d => d.Code == driverAcceptCode);
+                log.LogInformation($"Driver Name: {acceptedDriver.LastName}");
+                log.LogInformation($"Driver Code: {acceptedDriver.Code}");
                 if (acceptedDriver == null)
                     throw new Exception($"Data integrity - received an ack from an invalid driver {driverAcceptCode}!!");
 
