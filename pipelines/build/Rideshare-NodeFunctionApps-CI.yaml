@@ -44,5 +44,5 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/NodeFunctionApp.zip'
 
-
+trigger: none
 
