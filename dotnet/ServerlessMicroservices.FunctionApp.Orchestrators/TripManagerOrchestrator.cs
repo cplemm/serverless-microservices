@@ -140,7 +140,7 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
             log.LogInformation($"AssignTripDriver starting....");
             var trip = tripInfo.Trip;
             log.LogInformation($"TripCode: {trip.Code}");
-            log.LogInformation($"DriverCode: {trip.Driver.Code}");
+            log.LogInformation($"DriverCode: {tripInfo.Driver.Code}");
             if (ServiceFactory.GetSettingService().IsPersistDirectly())
             {
                 log.LogInformation($"Do the assignment");
