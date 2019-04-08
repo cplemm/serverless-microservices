@@ -41,13 +41,16 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
                     var acknowledgeTask = context.WaitForExternalEvent<string>(Constants.TRIP_DRIVER_ACCEPT_EVENT);
 
                     var winner = await Task.WhenAny(acknowledgeTask, timeoutTask);
+                    log.LogInformation("Let's continue");
                     if (winner == acknowledgeTask)
                     {
                         driverAcceptCode = acknowledgeTask.Result;
+                        log.LogInformation($"Driver Accept Code: {driverAcceptCode}");
                         cts.Cancel(); // we should cancel the timeout task
                     }
                     else
                     {
+                        log.LogInformation("Timeout");
                         driverAcceptCode = "Timed Out";
                     }
                 }

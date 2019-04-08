@@ -112,6 +112,7 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
         {
             try
             {
+                log.LogInformation($"Driver has accepted, code: {drivercode}");
                 await context.RaiseEventAsync(code, Constants.TRIP_DRIVER_ACCEPT_EVENT, drivercode);
                 return (ActionResult)new OkObjectResult("Ok");
             }
