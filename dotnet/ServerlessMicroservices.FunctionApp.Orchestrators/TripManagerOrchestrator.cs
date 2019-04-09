@@ -141,6 +141,8 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
             var trip = tripInfo.Trip;
             log.LogInformation($"TripCode: {trip.Code}");
             log.LogInformation($"DriverCode: {tripInfo.Driver.Code}");
+            log.LogInformation($"{ItemCollectionTypes.Driver}");
+
             if (ServiceFactory.GetSettingService().IsPersistDirectly())
             {
                 log.LogInformation($"Do the assignment");

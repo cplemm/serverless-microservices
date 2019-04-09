@@ -23,6 +23,7 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
             {
                 // The demo instance id is the trip code + -D. This is to make sure that a Trip Manager and a monitor can co-exist
                 var instanceId = $"{demoState.Code}-D";
+                log.LogInformation($"Message retrieved from queue: {instanceId}");
                 await StartInstance(context, demoState, instanceId, log);
             }
             catch (Exception ex)

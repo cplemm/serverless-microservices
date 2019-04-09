@@ -22,6 +22,7 @@ namespace ServerlessMicroservices.FunctionApp.Orchestrators
         {
             try
             {
+                log.LogInformation($"Trip: {trip.Code}");
                 // The manager instance id is the trip code
                 var instanceId = trip.Code;
                 await StartInstance(context, trip, instanceId, log);

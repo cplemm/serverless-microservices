@@ -150,6 +150,7 @@ namespace ServerlessMicroservices.FunctionApp.Trips
                 }
                 else
                 {
+                    log.LogInformation($"Send message to queue: {code}, {drivercode}");
                     await ServiceFactory.GetStorageService().Enqueue(code, drivercode);
                 }
 

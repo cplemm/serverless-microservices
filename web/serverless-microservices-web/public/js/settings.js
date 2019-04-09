@@ -10,4 +10,4 @@ window.apiBaseUrl = 'https://clemmrideshare.azure-api.net';
 window.apiDriversBaseUrl = `${window.apiBaseUrl}/d`;
 window.apiTripsBaseUrl = `${window.apiBaseUrl}/t`;
 window.apiPassengersBaseUrl = `${window.apiBaseUrl}/p`;
-window.signalrInfoUrl = 'https://clemmrideshare.service.signalr.net/api/signalrinfo';
+window.signalrInfoUrl = 'https://clemmtrips.azurewebsites.net/api/signalrinfo';
