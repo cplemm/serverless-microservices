@@ -3,10 +3,11 @@ import { checkResponse, get, post } from '@/utils/http';
 const baseUrl = window.apiTripsBaseUrl;
 const apiKey = window.apiKey;
 const signalrUrl = window.signalrInfoUrl;
+const signalrApiKey = window.signalrApiKey;
 
 // GET methods
 export function getSignalRInfo() {
-  return get(`${signalrUrl}`, {}, apiKey).then(checkResponse);
+  return get(`${signalrUrl}`, {}, signalrApiKey).then(checkResponse);
 }
 
 // POST methods
