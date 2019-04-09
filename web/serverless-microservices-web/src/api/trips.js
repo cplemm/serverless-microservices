@@ -2,10 +2,11 @@ import { checkResponse, get, post } from '@/utils/http';
 //const baseUrl = 'http://localhost:7071/api';
 const baseUrl = window.apiTripsBaseUrl;
 const apiKey = window.apiKey;
+const signalrUrl = window.signalrInfoUrl;
 
 // GET methods
 export function getSignalRInfo() {
-  return get(`${baseUrl}/signalrinfo`, {}, apiKey).then(checkResponse);
+  return get(`${signalrUrl}`, {}, apiKey).then(checkResponse);
 }
 
 // POST methods
